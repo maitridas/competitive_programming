@@ -40,17 +40,27 @@ using namespace std;
 #define vv vector
 using namespace std;
 
-void solve() {
-
+void solve(int x , int y) {
+    int steps =0;
+    steps = abs(x-2) + abs(y-2);
+    cout<<steps;
 }
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int tc = 1;
-    // cin >> tc;
-    for (int t = 1; t <= tc; t++) {
+    int tc =5 , arr[5][5] , x ,y;
+    // cin >> tc; Take input
+    for (int i = 0; i < tc; i++) {
         // cout << "Case #" << t  << ": ";
-        solve();
+        for(int j =0 ; j<5 ; ++j){
+            cin>>arr[i][j];
+            if(arr[i][j]==1){
+                x=i;
+                y=j;
+                break;
+            }
+        }
     }
+    solve(x,y);
 }
