@@ -39,18 +39,33 @@ using namespace std;
 #define cd complex<double> 
 #define vv vector
 
-
-void solve() {
-
-}
-
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int tc = 1;
-    // cin >> tc;
-    for (int t = 1; t <= tc; t++) {
-        // cout << "Case #" << t  << ": ";
-        solve();
+    string s;
+    cin>>s;
+    int upper =0 , lower=0;
+    for(int i=0; i<s.length(); ++i){
+        if(s[i]>='A' && s[i]<='Z'){
+            upper++;
+        }
+        else if(s[i]>='a' && s[i]<='z'){
+            lower++;
+        }
     }
+    if(upper>lower){
+        for(int i =0; i<s.length(); ++i){
+            if(s[i]>='a' && s[i]<='z'){
+                s[i] = s[i] - 'a' + 'A';
+            }
+        }
+    }
+    else{
+        for(int i =0; i<s.length(); ++i){
+            if(s[i]>='A' && s[i]<='Z'){
+                s[i] = s[i] + 'a' - 'A';
+            }
+        }
+    }
+    cout<<s;
 }

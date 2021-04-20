@@ -39,18 +39,22 @@ using namespace std;
 #define cd complex<double> 
 #define vv vector
 
-
-void solve() {
-
-}
-
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int tc = 1;
-    // cin >> tc;
-    for (int t = 1; t <= tc; t++) {
-        // cout << "Case #" << t  << ": ";
-        solve();
+    int n,min_steps=0;
+    string s;
+    cin>>n;
+    cin>>s;
+    for(int i=0; i<s.length()-1; ++i){
+        if(s.length()==1){
+            break;
+        }
+        if(s[i]==s[i+1]){
+            s.erase(i,1);
+            i--;
+            min_steps++;
+        }
     }
+    cout<<min_steps;
 }

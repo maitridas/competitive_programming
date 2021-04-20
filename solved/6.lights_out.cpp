@@ -40,17 +40,33 @@ using namespace std;
 #define vv vector
 
 
-void solve() {
-
-}
-
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int tc = 1;
-    // cin >> tc;
-    for (int t = 1; t <= tc; t++) {
-        // cout << "Case #" << t  << ": ";
-        solve();
+    int val;
+    int output_array[3][3];
+    //initializong all values to 1
+    
+    for(int i=0; i<3; ++i){
+        for(int j=0; j<3 ; ++j){
+            output_array[i][j]=1;
+        }
+    }
+    for(int i=0; i<3; ++i){
+        for(int j=0; j<3 ; ++j){
+            cin>>val;
+            output_array[i][j] += val;
+            if((i-1)>=0) output_array[i-1][j] +=val;
+            if((i+1)<=2) output_array[i+1][j] +=val;
+            if((j-1)>=0) output_array[i][j-1] +=val;
+            if((j+1)<=2) output_array[i][j+1] +=val;
+        }
+    }
+    for(int i=0; i<3; ++i){
+        for(int j=0; j<3 ; ++j){
+            output_array[i][j] = output_array[i][j]%2;
+            cout<<output_array[i][j];
+        }
+        cout<<endl;
     }
 }

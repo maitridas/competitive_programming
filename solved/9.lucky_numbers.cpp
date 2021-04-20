@@ -39,18 +39,23 @@ using namespace std;
 #define cd complex<double> 
 #define vv vector
 
-
-void solve() {
-
-}
-
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int tc = 1;
-    // cin >> tc;
-    for (int t = 1; t <= tc; t++) {
-        // cout << "Case #" << t  << ": ";
-        solve();
+    int dig,num_digits=0;
+    long long int num;
+    cin>>num;
+    while(num>0){
+        dig = num%10;
+        num=num/10;
+        if(dig==4 || dig==7){
+            num_digits++;
+        }
+    }
+    if(num_digits==4 || num_digits==7){
+        cout<<"YES";
+    }
+    else{
+        cout<<"NO";
     }
 }
