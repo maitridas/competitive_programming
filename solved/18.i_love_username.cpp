@@ -42,4 +42,21 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    int n,max,min,count=0,val;
+    cin>>n;
+    cin>>val;
+    min=val;
+    max=val;
+    for(int i=1; i<n; ++i){
+        cin>>val;
+        if(val>max){
+            count++;
+            max=val;
+        }
+        else if(val<min){
+            count++;
+            min = val;
+        }
+    }
+    cout<<count;
 }

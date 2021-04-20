@@ -42,4 +42,31 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    int n,l,r,num_l=0,num_r=0;
+    cin>>n;
+    for(int i=0; i<n; ++i){
+        cin>>l>>r;
+        if(l==1){
+            num_l++;
+        }
+        if(r==1){
+            num_r++;
+        }
+    }
+    int min_secs=0;
+    if(num_l>=(n-num_l)){
+        min_secs += (n-num_l);
+    }
+    else{
+        min_secs += num_l;
+    }
+
+    if(num_r>=(n-num_r)){
+        min_secs += (n-num_r);
+    }
+    else{
+        min_secs += num_r;
+    }
+
+    cout<<min_secs;
 }

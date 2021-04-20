@@ -42,4 +42,12 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    int n,left,enter,num_pass=0,cap=0;
+    cin>>n;
+    for(int i = 1; i<=n; ++i){
+        cin>>left>>enter;
+        num_pass = abs(num_pass-left+enter);
+        cap = max(cap,num_pass);
+    }
+    cout<<cap;
 }

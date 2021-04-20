@@ -42,4 +42,26 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    int min_elem_index=0,max_elem_index=0,min_elem,max_elem,n,arr[100];
+    cin>>n;
+    cin>>arr[0];
+    min_elem=arr[0];
+    max_elem=arr[0];
+    for(int i =1; i<n; ++i){
+        cin>>arr[i];
+        if(arr[i]>max_elem){
+            max_elem = arr[i];
+            max_elem_index = i;
+        }
+        if(arr[i]<=min_elem){
+            min_elem = arr[i];
+            min_elem_index = i;
+        }
+    }
+    int secs;
+    secs = max_elem_index + n -1 - min_elem_index;
+    if(max_elem_index>min_elem_index){
+        secs = secs -1;
+    }
+    cout<<secs;
 }

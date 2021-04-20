@@ -39,7 +39,42 @@ using namespace std;
 #define cd complex<double> 
 #define vv vector
 
+bool is_prime(int x){
+    for(int i=2; i<x; ++i)
+    {
+        if(x%i==0){
+            return false;
+        }
+    }
+    return true;
+}
+
+int next_prime(int x) {
+    int i =x+1;
+    while(1){
+        if(is_prime(i)){
+            return i;
+        }
+        i++;
+    }
+}
+
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    int n,m;
+    cin>>n>>m;
+    if(!is_prime(m)){
+        cout<<"NO";
+        return 0;
+    }
+    int next_prime_n;
+    next_prime_n = next_prime(n);
+    if(next_prime_n == m){
+        cout<<"YES";
+    } 
+    else{
+        cout<<"NO";
+    }
+    return 0;
 }
