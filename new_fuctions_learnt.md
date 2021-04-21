@@ -19,3 +19,36 @@ Gives length of the string
 s.erase(10,8)
 ```
 For further reading - https://www.cplusplus.com/reference/string/string/erase/
+
+## 4
+```
+sort(str.begin(), str.end());
+```
+sort string - https://www.geeksforgeeks.org/sort-string-characters/
+
+## 5
+Learnt about set
+https://www.geeksforgeeks.org/set-in-cpp-stl/
+
+## 6 
+String concatenation - https://www.w3schools.com/cpp/cpp_strings_concat.asp
+String compare - https://www.cplusplus.com/reference/string/string/compare/
+
+## 7
+min function
+```
+std::min({ 1, 2, 3, 4, 5, 0, -1, 7 }, comp)
+```
+comp is optional
+https://www.geeksforgeeks.org/stdmin-in-cpp/
+
+## 8
+transform function transform all charater acc to a function
+```
+ // su is the string which is converted to uppercase
+    string su = "Jatin Goyal";
+  
+// using transform() function and ::toupper in STL
+    transform(su.begin(), su.end(), su.begin(), ::toupper);
+```
+https://www.geeksforgeeks.org/transform-c-stl-perform-operation-elements/
