@@ -3,7 +3,10 @@
 #include<algorithm>
 std::fill_n(array, 100, -1);
 ```
-n C++, to set them all to -1, you can use something like std::fill_n (from <algorithm>)
+In C++, to set them all to -1, you can use something like std::fill_n (from <algorithm>)
+
+set all elements to 0
+arr[n] = {0}
 
 ## 2
 ```
