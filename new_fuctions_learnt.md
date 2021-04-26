@@ -26,8 +26,13 @@ For further reading - https://www.cplusplus.com/reference/string/string/erase/
 ## 4
 ```
 sort(str.begin(), str.end());
+
+## For array use this syntax
+sort(arr, arr+n)
 ```
 sort string - https://www.geeksforgeeks.org/sort-string-characters/
+
+sort array- https://www.geeksforgeeks.org/sort-c-stl/
 
 ## 5
 Learnt about set
@@ -55,3 +60,12 @@ transform function transform all charater acc to a function
     transform(su.begin(), su.end(), su.begin(), ::toupper);
 ```
 https://www.geeksforgeeks.org/transform-c-stl-perform-operation-elements/
+
+## 9
+reverse string
+```
+// Reverses elements in [begin, end]
+void reverse (BidirectionalIterator begin, 
+BidirectionalIterator end);
+```
+https://www.geeksforgeeks.org/reverse-a-string-in-c-cpp-different-methods/
