@@ -77,3 +77,6 @@ string s;
 s.insert(iterator, character);
 ```
 don't forget to do i++ every loop
+
+## 11
+struct c++ - https://www.geeksforgeeks.org/structures-in-cpp/
