@@ -21,6 +21,7 @@ Gives length of the string
 #include<string>
 s.erase(10,8)
 ```
+don't forget to do i--
 For further reading - https://www.cplusplus.com/reference/string/string/erase/
 
 ## 4
@@ -69,3 +70,10 @@ void reverse (BidirectionalIterator begin,
 BidirectionalIterator end);
 ```
 https://www.geeksforgeeks.org/reverse-a-string-in-c-cpp-different-methods/
+
+## 10
+```
+string s;
+s.insert(iterator, character);
+```
+don't forget to do i++ every loop
