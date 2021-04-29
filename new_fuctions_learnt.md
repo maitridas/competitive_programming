@@ -80,3 +80,32 @@ don't forget to do i++ every loop
 
 ## 11
 struct c++ - https://www.geeksforgeeks.org/structures-in-cpp/
+
+## 12
+```
+max_element(a, a + m)
+```
+a is a array and m array size
+gives the max element in the array
+in the algorithm library
+https://www.geeksforgeeks.org/max_element-in-cpp/
+
+## 13
+```
+min_element(b, b + am)
+```
+https://www.geeksforgeeks.org/stdmin_element-in-cpp/
+same as max element just finds the min element
+
+## 14
+```
+distance(a, max_element(a, a + m));
+```
+gives the index of max element 
+check out the documentation
+
+## 15
+```
+remove(begin(a),end(a),0);
+```
+https://stackoverflow.com/questions/879603/remove-an-array-element-and-shift-the-remaining-ones
