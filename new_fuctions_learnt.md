@@ -8,6 +8,12 @@ In C++, to set them all to -1, you can use something like std::fill_n (from <alg
 set all elements to 0
 arr[n] = {0}
 
+also can use memset
+```
+memset(b,-1,sizeof(b))
+```
+b is a int array
+
 ## 2
 ```
 #include<string>
