@@ -115,3 +115,11 @@ check out the documentation
 remove(begin(a),end(a),0);
 ```
 https://stackoverflow.com/questions/879603/remove-an-array-element-and-shift-the-remaining-ones
+
+## 16
+https://www.geeksforgeeks.org/getline-string-c/
+
+cin breaks when whitespace or blank found to take input with blanks use
+```
+getline(cin,str);
+```
