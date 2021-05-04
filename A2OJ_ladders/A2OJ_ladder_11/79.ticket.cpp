@@ -46,4 +46,36 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    sort(s.begin(),s.end()-n);
+    sort(s.begin()+n,s.end());
+    int flag=-1;
+    if(s[0]>s[n]){
+        flag=0;
+    }
+    else if(s[0]<s[n]){
+        flag=1;
+    }
+    else{
+        cout<<"NO";
+        return 0;
+    }
+    FORE(i,1,n-1){
+        if(flag==1){
+            if(s[i]>=s[i+n]){
+                cout<<"NO";
+                return 0;
+            }
+        }
+        else if(flag==0){
+            if(s[i]<=s[i+n]){
+                cout<<"NO";
+                return 0;
+            }
+        }
+    }
+    cout<<"YES";
 }

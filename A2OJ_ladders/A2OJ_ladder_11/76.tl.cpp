@@ -46,4 +46,33 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    int n,m,a,minr=imx,maxr=imn,minw=imx;
+    cin>>n>>m;
+    FOR(i,n){
+        cin>>a;
+        minr = min(minr,a);
+        maxr = max(maxr,a);
+    }
+    FOR(i,m){
+        cin>>a;
+        minw = min(minw,a);
+    }
+    if(minw==maxr){
+        cout<<-1;
+        return 0;
+    }
+    else{
+        FORE(i,maxr,minw-1){
+            if((2*minr)<=i){
+                cout<<i;
+                return 0;
+            }
+        }
+        
+    }
+    cout<<-1;
 }
+/*
+Without any loop better solution
+Let's v = min(ai), p = max(ai), c = min(bi). So, if max(2 * v, p) < c, then answer is max(2 * v, p), else answer is  - 1.
+*/

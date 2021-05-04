@@ -46,4 +46,14 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    int y,n,k;
+    cin>>y>>k>>n;
+    int flag=0;
+    FORE(i,1,n/k)
+    {   if((i*k)-y > 0)
+        {   cout << (i*k) - y << " ";
+            flag = 1;
+        }
+    }
+    if (!flag) cout<< -1;
 }

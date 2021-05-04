@@ -46,4 +46,25 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+    int n,m;
+    cin>>n>>m;
+    int flag =1;
+    if(n<m){
+        flag =0;
+    }
+    int b=n,g=m;
+    FOR(i,n+m){
+        if(flag==1 && b!=0){
+            cout<<"B";
+            b--;
+            if(g!=0) flag=0;
+        }
+        else if(flag==0 && g!=0){
+            cout<<"G";
+            if(b!=0) flag=1;
+            g--;
+        }
+    }
 }
