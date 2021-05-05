@@ -123,3 +123,6 @@ cin breaks when whitespace or blank found to take input with blanks use
 ```
 getline(cin,str);
 ```
+
+## Find all divisor in O(sqrt(n))
+https://www.geeksforgeeks.org/find-divisors-natural-number-set-1/
