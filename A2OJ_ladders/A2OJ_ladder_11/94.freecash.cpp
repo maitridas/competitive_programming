@@ -48,4 +48,23 @@ int main() {
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    int n,h,m;
+    int c=1,maxc=1;
+    int hi,mi;
+    cin>>n;
+    cin>>hi>>mi;
+    FORE(i,1,n-1){
+        cin>>h>>m;
+        if(hi==h && mi==m){
+            c++;
+        }
+        else{
+            c=1;
+            hi=h;
+            mi=m;
+        }
+        maxc = max(maxc,c);
+    }
+    
+    cout<<maxc;
 }

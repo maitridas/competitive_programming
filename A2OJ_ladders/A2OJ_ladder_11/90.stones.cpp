@@ -48,4 +48,32 @@ int main() {
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    int n;
+    vv<ll> v,u;
+    cin>>n;
+    int val;
+    FOR(i,n){
+        cin>>val;
+        v.pb(val);
+        u.pb(val);
+    }
+    sort(u.begin(),u.end());
+    FORE(i,1,n-1){
+        v[i] = v[i] + v[i-1];
+        u[i] = u[i] + u[i-1];
+    }
+    int m;
+    cin>>m;
+    int t,l,r;
+    FOR(i,m){
+        cin>>t>>l>>r;
+        if(t==1){
+            if(l==1) cout<<v[r-1]<<endl;
+            else cout<<(v[r-1]-v[max(l-2,0)])<<endl;
+        }
+        else if(t==2){
+            if(l==1) cout<<u[r-1]<<endl;
+            else cout<<(u[r-1]-u[max(l-2,0)])<<endl;
+        }
+    }
 }

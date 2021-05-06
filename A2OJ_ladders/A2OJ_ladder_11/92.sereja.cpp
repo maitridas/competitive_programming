@@ -48,4 +48,48 @@ int main() {
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    int a[100005],c[100005] ={0},ans[100005];
+    int n,m,sum=0,l;
+    cin>>n>>m;
+    FOR(i,n){
+        cin>>a[i];
+        c[a[i]] =1;
+    }
+    for(int i=n-1;i>=0;--i){
+        if(c[a[i]]==1){
+            sum++;
+            c[a[i]]=0;
+        }
+        ans[i] = sum;
+    }
+    FOR(i,m){
+        cin>>l;
+        cout<<ans[l-1]<<endl;
+    }
 }
+/*
+Getting TLE
+vi a;
+    set<int> s;
+    int n,m,l,c;
+    int val;
+    cin>>n>>m;
+    FOR(i,n){
+        cin>>val;
+        a.pb(val);
+        s.insert(val);
+    }
+    c = s.size();
+    FOR(i,m){
+        cin>>l;
+        s.clear();
+        if(l==1){
+            cout<<c<<endl;
+            continue;
+        }
+        FORE(j,l-1,n-1){
+            s.insert(a[j]);
+        }
+        cout<<s.size()<<endl;
+    }
+*/
