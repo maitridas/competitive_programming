@@ -43,10 +43,45 @@ using namespace std;
 #define lmx LLONG_MAX
 #define lmn LLONG_MIN
 
+bool my_comp(pii a,pii b){
+    if(a.first == b.first){
+        return (a.second<b.second);
+    }
+    else{
+        return (a.first>b.first);
+    }
+}
+
 int main() {
     //freopen("input.txt", "r", stdin);
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    
+    vv<pii> v;
+    int n,k;
+    cin>>n>>k;
+    int p,t;
+    FOR(i,n){
+        cin>>p>>t;
+        v.pb({p,t});
+    }
+    sort(v.begin(),v.end(),my_comp);
+    int ans=1;
+    FORE(i,k,v.size()-1){
+        if(v[k-1].first==v[i].first && v[k-1].second==v[i].second ){
+            ans++;
+        }
+        else{
+            break;
+        }
+    }
+    for(int i = k-2; i>=0; i--){
+        if(v[k-1].first==v[i].first && v[k-1].second==v[i].second ){
+            ans++;
+        }
+        else{
+            break;
+        }
+    }
+    cout<<ans;
 }
