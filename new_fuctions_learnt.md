@@ -126,3 +126,7 @@ getline(cin,str);
 
 ## Find all divisor in O(sqrt(n))
 https://www.geeksforgeeks.org/find-divisors-natural-number-set-1/
+
+## Find pythogorean triplet in O(k)
+https://www.geeksforgeeks.org/generate-pythagorean-triplets/
+https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple
