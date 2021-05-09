@@ -67,8 +67,8 @@ int main() {
                 }
                 else{
                     z = x + y;
-                    if((a*z)%b == 0) y++;
-                    else  break; 
+                    if((a*z)%b == 0) {y++;}
+                    else { break; }
                 }
             }
         }
