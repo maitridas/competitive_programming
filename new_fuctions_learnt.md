@@ -130,3 +130,14 @@ https://www.geeksforgeeks.org/find-divisors-natural-number-set-1/
 ## Find pythogorean triplet in O(k)
 https://www.geeksforgeeks.org/generate-pythagorean-triplets/
 https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple
+
+## 19 Maximum and minimum of an array using minimum number of comparisons
+
+What i liked about it is like storing max and min in a pair and the third approach is best.
+
+## 20 Read later after learning sorting and heap
+https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/
+
+https://www.cdn.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array-set-2-expected-linear-time/
+
+https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array-set-3-worst-case-linear-time/
