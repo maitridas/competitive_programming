@@ -43,6 +43,23 @@ using namespace std;
 #define lmx LLONG_MAX
 #define lmn LLONG_MIN
 
+vi vec_inp(int n){
+    int val;
+    vi arr;
+    FOR(i,n){
+        cin>>val;
+        arr.pb(val);
+    }
+    return arr;
+}
+
+void print_vec(vi arr, int n){
+    FOR(i,n){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
 int main() {
     //freopen("input.txt", "r", stdin);
     //freopen("output.txt", "w", stdout);

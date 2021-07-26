@@ -43,35 +43,53 @@ using namespace std;
 #define lmx LLONG_MAX
 #define lmn LLONG_MIN
 
+vi vec_inp(int n){
+    int val;
+    vi arr;
+    FOR(i,n){
+        cin>>val;
+        arr.pb(val);
+    }
+    return arr;
+}
+void print_vec(vi arr, int n){
+    FOR(i,n){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
 int main() {
     //freopen("input.txt", "r", stdin);
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int t;
-    cin>>t;
-    int a,b;
-    FOR(i,t){
-        cin>>a>>b;
-        int x,y,z;
-        if(a%b==0){
-            cout<<"NO"<<endl;
+    int n;
+    vi arr;
+    cin>>n;
+    arr = vec_inp(n);
+    int left,right;
+    left=0;
+    right=n-1;
+    int temp;
+    while(left<=right){
+        if(arr[left]>0 && arr[right]<=0){
+            temp = arr[left];
+            arr[left] = arr[right];
+            arr[right]=temp;
+            left++;
+            right--;
+        }
+        else if(arr[left]<0 && arr[right]<=0){
+            left++;
+        }
+        else if(arr[right]>=0 && arr[left]>0){
+            right--;
         }
         else{
-            cout<<"YES"<<endl;
-            x = b;
-            y = 2;
-            while(1){
-                if((a*y)%b ==0){
-                    y++;
-                }
-                else{
-                    z = x + y;
-                    if((a*z)%b == 0) {y++;}
-                    else { break; }
-                }
-            }
+            left++;
+            right--; 
         }
-        cout<<a*x<<" "<<a*y<<" "<<a*z<<endl;
     }
+    print_vec(arr,n);
 }

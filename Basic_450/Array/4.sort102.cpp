@@ -48,8 +48,29 @@ int main() {
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    FORE(i,1,47){
-        cout<<"![\"Problem\"](./images/lecture9/img"<<i<<".JPG)"<<endl<<endl;
+    int n;
+    cin>>n;
+    int c0,c1,c2,val;
+    c0=c1=c2=0;
+    FOR(i,n){
+        cin>>val;
+        if(val==0){
+            c0++;
+        }
+        else if(val==1){
+            c1++;
+        }
+        else{
+            c2++;
+        }
     }
-
+    FOR(i,c0){
+        cout<<0<<" ";
+    }
+    FOR(i,c1){
+        cout<<1<<" ";
+    }
+    FOR(i,c2){
+        cout<<2<<" ";
+    }
 }

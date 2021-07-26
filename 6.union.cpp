@@ -43,19 +43,20 @@ using namespace std;
 #define lmx LLONG_MAX
 #define lmn LLONG_MIN
 
-bool checkwhole(double n)
-{
-     
-    // If ceil and floor are equal
-    // the number is a perfect
-    // square
-    if (ceil(n) == floor(n)) {
-        return true;
+vi vec_inp(int n){
+    int val;
+    vi arr;
+    FOR(i,n){
+        cin>>val;
+        arr.pb(val);
     }
-    else {
-        return false;
-    }
+    return arr;
+}
 
+void print_set(set<int> s, int n){
+    for (auto itr = s.begin(); itr != s.end(); itr++)
+        cout << *itr<< " ";
+    cout<<endl;
 }
 
 int main() {
@@ -63,22 +64,14 @@ int main() {
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int t;
-    long long int g,c;
-    double d,x;
-    cin>>t;
-    FOR(s,t){
-        cin>>g;
-        c =1;
-        FORE(i,1,g-1){
-            d = sqrt( pow((2*i - 1),2) + 8*g );
-            if(checkwhole(d)){
-                x = ( -1*(2*i - 1) + d )/2;
-                if(checkwhole(x)){
-                    c++;
-                }
-            }
-        }
-        cout<<c<<endl;
+    vi a,b;
+    int n,m;
+    cin>>n>>m;
+    a = vec_inp(n);
+    b = vec_inp(m);
+    set<int> s(a.begin(),a.end());
+    FOR(i,m){
+        s.insert(b[i]);
     }
+    print_set(s,n+m);
 }
