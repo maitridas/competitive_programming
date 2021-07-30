@@ -65,8 +65,14 @@ int main() {
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int n;
-    cin>>n;
-    vi a;
-    a = vec_inp(n);
+    int n,m;
+    cin>>n>>m;
+    vi a1,a2;
+    a1 = vec_inp(n);
+    a2 = vec_inp(m);
+    FOR(i,m){
+        a1.pb(a2[i]);
+    }
+    sort(a1.begin(),a1.end());
+    print_vec(a1,n+m);
 }

@@ -59,6 +59,7 @@ void print_vec(vi arr, int n){
     }
     cout<<endl;
 }
+// Question how is this O(n)
 
 int main() {
     //freopen("input.txt", "r", stdin);
@@ -66,7 +67,23 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
     int n;
+    vi nums;
     cin>>n;
-    vi a;
-    a = vec_inp(n);
+    nums = vec_inp(n+1);
+    int tortoise,hare;
+    tortoise = hare = nums[0];
+    // phase 1
+    do{
+        tortoise = nums[tortoise];
+        hare = nums[nums[hare]];
+    }while(tortoise!=hare);
+
+    //phase 2
+    tortoise = nums[0];
+    while(tortoise!=hare){
+        tortoise = nums[tortoise];
+        hare = nums[hare];
+    }
+
+    cout<<hare;
 }

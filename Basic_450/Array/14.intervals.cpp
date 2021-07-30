@@ -65,8 +65,30 @@ int main() {
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    vv<vi> intervals, merged;
     int n;
+    int a,b;
+    vi element;
     cin>>n;
-    vi a;
-    a = vec_inp(n);
+    FOR(i,n){
+        element.clear();
+        cin>>a>>b;
+        element.pb(a);
+        element.pb(b);
+        intervals.pb(element);
+    }
+    sort(intervals.begin(),intervals.end());
+
+    for(auto interval : intervals){
+        if(merged.empty() || merged.back()[1]<interval[0]){
+            merged.pb(interval);
+        }
+        else{
+            merged.back()[1] = max(merged.back()[1], interval[1]);
+        }
+    }
+
+    for(auto interval: merged){
+        cout<<interval[0]<<" "<<interval[1]<<endl;
+    }
 }

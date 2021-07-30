@@ -65,8 +65,33 @@ int main() {
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
+    vi::iterator ip;
+    vi a;
     int n;
     cin>>n;
-    vi a;
     a = vec_inp(n);
+    int first=-1;
+    ip = a.end()-1;
+    for(int i=n-1;i>=1;--i){
+        ip--;
+        if(a[i]>a[i-1]){
+            first =i-1;
+            break;
+        }
+    }
+    if(first>=0){
+        for(int i=n-1;i>first;--i){
+            if(a[first]<a[i]){
+                int temp = a[first];
+                a[first] = a[i];
+                a[i] = temp;
+                break;
+            }
+        }
+        sort(ip+1,a.end());
+    }
+    else{
+        sort(a.begin(),a.end());
+    }
+    print_vec(a,n);
 }

@@ -66,7 +66,27 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
     int n;
-    cin>>n;
     vi a;
+    cin>>n;
     a = vec_inp(n);
+    int max_so_far=0, max_sum=INT_MIN;
+    int start,end;
+    FOR(i,n){
+        if(max_so_far+a[i]>a[i]){
+            end = i;
+            max_so_far = max_so_far + a[i];
+        }
+        else{
+            start = i;
+            end = i;
+            max_so_far = a[i];
+        }
+        if(max_so_far>max_sum){
+            max_sum=max_so_far;
+        }
+    }
+    cout<<max_sum<<endl;
+    FORE(i,start,end){
+        cout<<a[i]<<" ";
+    }
 }

@@ -65,8 +65,19 @@ int main() {
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int n;
-    cin>>n;
+    int n,k;
     vi a;
+    cin>>n>>k;
     a = vec_inp(n);
+    sort(a.begin(),a.end());
+    int ma,mi;
+    int ans=a[n-1]-a[0];
+    FORE(i,1,n-2){
+        if(a[i]>=k && a[n-1]>=k){
+            ma = max(a[i-1]+k,a[n-1]-k);
+            mi = min(a[i]-k,a[0]+k);
+            ans = min(ans, ma-mi);
+        }
+    }
+    cout<<ans;
 }

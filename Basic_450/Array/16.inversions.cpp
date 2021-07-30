@@ -66,7 +66,19 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
     int n;
-    cin>>n;
     vi a;
+    vv<pii> arr;
+    pii elem;
+    cin>>n;
     a = vec_inp(n);
+    FOR(i,n){
+        elem.first = a[i];
+        elem.second = i;
+        arr.pb(elem);
+    }
+    int count=0;
+    sort(arr.begin(),arr.end());
+    FOR(i,n){
+        
+    }
 }

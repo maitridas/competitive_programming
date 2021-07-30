@@ -66,7 +66,35 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
     int n;
-    cin>>n;
     vi a;
+    cin>>n;
     a = vec_inp(n);
+    int steps=a[0], count =1 ,max_reach=a[0];
+    if(n<=1){
+        cout<<0;
+        return 0;
+    }
+    if(a[0]==0){
+        cout<<-1;
+        return 0;
+    }
+    FORE(i,1,n-1){
+        if(i==n-1){
+            break;
+        }
+        max_reach = max(max_reach, i+a[i]);
+        steps--;
+        if(steps==0){
+            count++;
+
+            if(i>=max_reach){
+                cout<<-1;
+                return 0;
+            }
+
+            steps = max_reach - i;
+        }
+    }
+
+    cout<<count;
 }

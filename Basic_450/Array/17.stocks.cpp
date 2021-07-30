@@ -69,4 +69,14 @@ int main() {
     cin>>n;
     vi a;
     a = vec_inp(n);
+    int min_price = INT_MAX, max_profit=0;
+    FOR(i,n){
+        if(a[i]<min_price){
+            min_price = a[i];
+        }
+        else if(a[i]-min_price>max_profit){
+            max_profit = a[i] - min_price;
+        }
+    }
+    cout<<max_profit;
 }
