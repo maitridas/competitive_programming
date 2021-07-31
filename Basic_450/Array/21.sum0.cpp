@@ -23,7 +23,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <cstdlib>
-#include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
 
@@ -70,4 +70,15 @@ int main() {
     cin>>n;
     vi a;
     a = vec_inp(n);
+    int sum=0;
+    unordered_set<int> set;
+    FOR(i,n){
+        sum+=a[i];
+        if(sum==0 || set.find(sum)!=set.end()){
+            cout<<"True";
+            return 0;
+        }
+        set.insert(sum);
+    }
+    cout<<"False";
 }

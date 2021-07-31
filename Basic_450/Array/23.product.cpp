@@ -70,4 +70,19 @@ int main() {
     cin>>n;
     vi a;
     a = vec_inp(n);
+    int minval,maxval,maxprod;
+    minval=maxval=maxprod=a[0];
+    FORE(i,1,n-1){
+        if(a[i]<0){
+            int temp;
+            temp = minval;
+            minval = maxval;
+            maxval = temp;
+        }
+
+        maxval = max(a[i],maxval*a[i]);
+        minval = min(a[i],minval*a[i]);
+        maxprod = max(maxprod,maxval);
+    }
+    cout<<maxprod;
 }

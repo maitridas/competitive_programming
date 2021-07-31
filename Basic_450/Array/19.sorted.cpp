@@ -66,8 +66,25 @@ int main() {
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int n;
-    cin>>n;
-    vi a;
-    a = vec_inp(n);
+    int n1,n2,n3;
+    cin>>n1>>n2>>n3;
+    vi a,b,c;
+    a = vec_inp(n1);
+    b = vec_inp(n2);
+    c = vec_inp(n3);
+    unordered_map<int,int> arr;
+    FOR(i,n1){
+        arr[a[i]]++;
+    }
+    FOR(i,n2){
+        arr[b[i]]++;
+    }
+    FOR(i,n3){
+        arr[c[i]]++;
+    }
+    for(auto i:arr){
+        if(i.second==3){
+            cout<<i.first<<" ";
+        }
+    }
 }

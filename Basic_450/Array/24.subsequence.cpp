@@ -23,7 +23,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <cstdlib>
-#include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
 
@@ -70,4 +70,21 @@ int main() {
     cin>>n;
     vi a;
     a = vec_inp(n);
+    unordered_set<int> set;
+    FOR(i,n){
+        set.insert(a[i]);
+    }
+    int count=0,max1=INT_MIN;
+    FOR(i,n){
+        count=0;
+        if(set.find(a[i]-1)==set.end()){
+            int j=a[i];
+            while(set.find(j)!=set.end()){
+                j++;
+                count++;
+            }
+        }
+        max1 = max(max1,count);   
+    }
+    cout<<max1;
 }

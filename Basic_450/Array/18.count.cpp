@@ -66,8 +66,21 @@ int main() {
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int n;
-    cin>>n;
+    int n,sum;
+    cin>>n>>sum;
     vi a;
     a = vec_inp(n);
+    unordered_map<int, int> ans;
+    FOR(i,n){
+        ans[a[i]]++;
+    }
+    int count=0;
+    FOR(i,n){
+        count += ans[sum - a[i]];
+        if(sum-a[i]==a[i]){
+            count--;
+        }
+    }
+    count = count/2;
+    cout<<count;
 }

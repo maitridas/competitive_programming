@@ -70,4 +70,32 @@ int main() {
     cin>>n;
     vi a;
     a = vec_inp(n);
+    sort(a.begin(),a.end());
+    int firstp,now;
+    char next='N';
+    FOR(i,n){
+        if(a[i]>=0){
+            firstp=i;
+            break;
+        }
+    }
+    int temp;
+    FOR(i,n){
+        if((firstp==n)||i==firstp){
+            break;
+        }
+
+        if(next=='N'){
+            next='P';
+            continue;
+        }
+        else{
+            next='N';
+            temp = a[firstp];
+            a[firstp]=a[i];
+            a[i]=temp;
+            firstp++;
+        }
+    }
+    print_vec(a,n);
 }

@@ -68,6 +68,26 @@ int main() {
     cin.tie(0); cout.tie(0);
     int n;
     cin>>n;
-    vi a;
-    a = vec_inp(n);
+    vi res;
+    res.pb(1);
+    int carry=0,res_size=1;
+    int prod;
+    FORE(i,2,n){
+        carry=0;
+        FOR(j,res_size){
+            prod = res[j]*i + carry;
+            res[j] = prod%10;
+            carry = prod/10;
+        }
+        if(carry!=0){
+            while(carry>0){
+                res.pb(carry%10);
+                carry = carry/10;
+                res_size++;
+            }
+        }
+    }
+    for(int i=res_size-1;i>=0;i--){
+        cout<<res[i];
+    }
 }

@@ -66,8 +66,17 @@ int main() {
     //freopen("output.txt", "w", stdout);
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int n;
-    cin>>n;
+    int n,k;
+    cin>>n>>k;
     vi a;
     a = vec_inp(n);
+    unordered_map<int,int> map;
+    FOR(i,n){
+        map[a[i]]++;
+    }
+    for(auto elem:map){
+        if(elem.second>=(n/k)){
+            cout<<elem.first<<" ";
+        }
+    }
 }
