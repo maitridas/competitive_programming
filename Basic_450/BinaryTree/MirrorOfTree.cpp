@@ -106,9 +106,23 @@ Node* buildTree(string str){
 
 }
 
+void mirroroftree(Node *root){
+    if(root==NULL){
+        return;
+    }
+    Node *temp = root->left;
+    root->left = root->right;
+    root->right = temp;
+    mirroroftree(root->left);
+    mirroroftree(root->right);
+}
+
 int main(){
     string str;
-    cin>>str;
+    getline(cin,str);
     Node *root = buildTree(str);
+    inorder(root);
+    cout<<endl;
+    mirroroftree(root);
     inorder(root);
 }
