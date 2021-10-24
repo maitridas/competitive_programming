@@ -1,0 +1,15 @@
+//Print Vector for testing
+void print_vec(vi arr, int n){
+    FOR(i,n){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
+// GCD
+int gcd(int a , int b)
+{
+   if(b==0) return a;
+   a%=b;
+   return gcd(b,a);
+}
